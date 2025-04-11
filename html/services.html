@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - Apartment Maintenance</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-card h3 {
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        .service-card i {
+            font-size: 2.5rem;
+            color: #4CAF50;
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .request-btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .request-btn:hover {
+            background-color: #45a049;
+        }
+
+        .page-title {
+            text-align: center;
+            padding: 2rem;
+            color: #333;
+        }
+
+        .todo-section {
+            padding: 2rem;
+            background-color: #f9f9f9;
+            text-align: center;
+        }
+
+        .todo-list ul {
+            list-style: none;
+            padding: 0;
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .todo-list li {
+            margin: 10px 0;
+            font-size: 1.2rem;
+        }
+
+        .todo-list input[type="checkbox"] {
+            margin-right: 10px;
+        }
+    </style>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="logo">
+            <h1>Apartment Maintenance</h1>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="payment.html">Payment</a></li>
+            <li><a href="login.html" class="login-btn">Login</a></li>
+        </ul>
+    </nav>
+
+    <!-- Services Section -->
+    <main>
+        <h1 class="page-title">Our Services</h1>
+        <div class="services-grid">
+            <div class="service-card">
+                <i class="fas fa-wrench"></i>
+                <h3>Plumbing Services</h3>
+                <p>Expert plumbing repairs, installations, and maintenance for all your water-related issues.</p>
+                <a href="login.html" class="request-btn">Request Service</a>
+            </div>
+
+            <div class="service-card">
+                <i class="fas fa-bolt"></i>
+                <h3>Electrical Services</h3>
+                <p>Professional electrical repairs, installations, and safety inspections for your apartment.</p>
+                <a href="login.html" class="request-btn">Request Service</a>
+            </div>
+
+            <div class="service-card">
+                <i class="fas fa-snowflake"></i>
+                <h3>HVAC Maintenance</h3>
+                <p>Complete heating, ventilation, and air conditioning maintenance and repairs.</p>
+                <a href="login.html" class="request-btn">Request Service</a>
+            </div>
+
+            <div class="service-card">
+                <i class="fas fa-paint-roller"></i>
+                <h3>Interior Repairs</h3>
+                <p>Wall repairs, painting, flooring fixes, and general interior maintenance services.</p>
+                <a href="login.html" class="request-btn">Request Service</a>
+            </div>
+
+            <div class="service-card">
+                <i class="fas fa-broom"></i>
+                <h3>Cleaning Services</h3>
+                <p>Professional cleaning services for common areas and individual apartments.</p>
+                <a href="login.html" class="request-btn">Request Service</a>
+            </div>
+
+            <div class="service-card">
+                <i class="fas fa-shield-alt"></i>
+                <h3>Security Systems</h3>
+                <p>Installation and maintenance of security systems and emergency response services.</p>
+                <a href="login.html" class="request-btn">Request Service</a>
+            </div>
+        </div>
+
+        <!-- To-Do List Section -->
+        <!-- <section class="todo-section">
+            <div class="page-title">
+                <h2>To-Do List</h2>
+                <p>Keep track of your monthly tasks</p>
+            </div>
+            <div class="todo-list">
+                <ul>
+                    <li>
+                        <input type="checkbox" id="rent">
+                        <label for="rent">Pay Rent</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="water-tax">
+                        <label for="water-tax">Pay Water Tax</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="electricity-bill">
+                        <label for="electricity-bill">Pay Electricity Bill</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="maintenance-fee">
+                        <label for="maintenance-fee">Pay Maintenance Fee</label>
+                    </li>
+                </ul>
+            </div>
+        </section> -->
+    </main>
+
+    <!-- <footer>
+        <p>&copy; 2025 Apartment Maintenance. All rights reserved.</p>
+    </footer> -->
+</body>
+</html>

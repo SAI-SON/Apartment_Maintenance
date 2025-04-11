@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment - JK Apartment</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+        .todo-section {
+            padding: 2rem;
+            background-color: #f9f9f9;
+            text-align: center;
+        }
+
+        .todo-list ul {
+            list-style: none;
+            padding: 0;
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .todo-list li {
+            margin: 15px 0;
+            font-size: 1.2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .todo-list input[type="checkbox"] {
+            margin-right: 10px;
+        }
+
+        .pay-btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 5px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .pay-btn:hover {
+            background-color: #45a049;
+        }
+
+        .pay-btn:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+
+        .success-message {
+            display: none;
+            color: #4CAF50;
+            font-size: 1rem;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="logo">
+            <h1>JK Apartment</h1>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="payment.html" class="active">Payment</a></li>
+            <li><a href="login.html" class="login-btn">Login</a></li>
+        </ul>
+    </nav>
+
+    <!-- To-Do List Section -->
+    <section class="todo-section">
+        <div class="page-title">
+            <h2>Payment To-Do List</h2>
+            <p>Keep track of your monthly payments</p>
+        </div>
+        <div class="todo-list">
+            <ul>
+                <li>
+                    <div>
+                        <input type="checkbox" id="rent">
+                        <label for="rent">Pay Rent</label>
+                    </div>
+                    <button class="pay-btn" onclick="makePayment('Rent', this)">Pay</button>
+                    <span class="success-message">Paid</span>
+                </li>
+                <li>
+                    <div>
+                        <input type="checkbox" id="water-tax">
+                        <label for="water-tax">Pay Water Tax</label>
+                    </div>
+                    <button class="pay-btn" onclick="makePayment('Water Tax', this)">Pay</button>
+                    <span class="success-message">Paid</span>
+                </li>
+                <li>
+                    <div>
+                        <input type="checkbox" id="electricity-bill">
+                        <label for="electricity-bill">Pay Electricity Bill</label>
+                    </div>
+                    <button class="pay-btn" onclick="makePayment('Electricity Bill', this)">Pay</button>
+                    <span class="success-message">Paid</span>
+                </li>
+                <li>
+                    <div>
+                        <input type="checkbox" id="maintenance-fee">
+                        <label for="maintenance-fee">Pay Maintenance Fee</label>
+                    </div>
+                    <button class="pay-btn" onclick="makePayment('Maintenance Fee', this)">Pay</button>
+                    <span class="success-message">Paid</span>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 JK Apartment. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const tasks = document.querySelectorAll('.todo-list li');
+            tasks.forEach(task => {
+                const checkbox = task.querySelector('input[type="checkbox"]');
+                const button = task.querySelector('.pay-btn');
+                const successMessage = task.querySelector('.success-message');
+
+                // Enable/disable the button based on checkbox state
+                checkbox.addEventListener('change', () => {
+                    button.disabled = !checkbox.checked;
+                });
+
+                // Initially disable the button if the checkbox is not checked
+                button.disabled = !checkbox.checked;
+            });
+        });
+
+        function makePayment(task, button) {
+            const checkbox = button.previousElementSibling.querySelector('input[type="checkbox"]');
+
+            // Simulate a payment process
+            button.disabled = true;
+            button.textContent = 'Processing...';
+
+            setTimeout(() => {
+                button.textContent = 'Pay';
+                button.style.display = 'none'; // Hide the button after payment
+                const successMessage = button.nextElementSibling;
+                successMessage.style.display = 'inline'; // Show success message
+
+                alert(`${task} payment completed successfully!`);
+            }, 2000); // Simulate a 2-second payment process
+        }
+    </script>
+</body>
+</html>
